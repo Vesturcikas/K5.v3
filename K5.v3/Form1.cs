@@ -56,34 +56,37 @@ namespace K5.v3
         private void atnaujinti_KomplektuDetaliuLentele_Click(object sender, EventArgs e)
         {
             string prisijungimoEilute = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = "+textBox2.Text+"; Integrated Security = True";
-            
 
             System.IO.StreamReader reader = new System.IO.StreamReader(textBox1.Text);
 
             string line = null;
-            string irasymas = "INSERT INTO Komplektu_Detales(DetKodas, DetAnalog1, DetAnalog2, DetAnalog3) VALUES(@DetKodas, @DetAnalog1, @DetAnalog2, @DetAnalog3)";
+            string naujasAnalog1=null;
+            string naujasAnalog2=null;
+            string naujasAnalog3=null;
+            string detKodas=null;
+
+            string atnaujinimas = "UPDATE Komplektu_Detales SET DetAnalog1 ="+naujasAnalog1+" , DetAnalog2 ="+naujasAnalog2+", DetAnalog3 = "+naujasAnalog3+"WHERE DetKodas ="+detKodas;
+            
+            string isrinkimas = "SELECT * FROM Komlektu_Detales WHERE DetKodas =" + detKodas;
 
             while ((line = reader.ReadLine()) != null)
             {
                 var data = line.Split(';');
-                SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
-                SqlCommand komanda = new SqlCommand(irasymas, sqlPrisijungimas);
 
-                using (komanda)
-                {
-                    
-                    komanda.Parameters.AddWithValue("@DetKodas", data[0]);
-                    komanda.Parameters.AddWithValue("@DetAnalog1", data[1]);
-                    komanda.Parameters.AddWithValue("@DetAnalog2", data[2]);
-                    komanda.Parameters.AddWithValue("@DetAnalog3", data[3]);
-                    sqlPrisijungimas.Open();
-                    int rezult = komanda.ExecuteNonQuery();
-                    if (rezult < 0)
-                    {
-                        Console.WriteLine("Error inserting data into Database!");
-                    }
-                    sqlPrisijungimas.Close();
-                }
+                detKodas = data[0];
+                naujasAnalog1 = data[1];
+                naujasAnalog2 = data[2];
+                naujasAnalog3 = data[3];
+
+                SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
+                SqlCommand komndaIsrinkimas = new SqlCommand(isrinkimas, sqlPrisijungimas);
+                SqlDataReader nuskaitymas = null;
+                sqlPrisijungimas.Open();
+                nuskaitymas = komndaIsrinkimas.ExecuteReader();
+
+                
+                sqlPrisijungimas.Close();
+                
             }
 
         }
@@ -102,6 +105,43 @@ namespace K5.v3
             }
 
             textBox2.Text = ofd.FileName;
+        }
+
+        private void irasyti_KomplektuDetaliuLentele_Click(object sender, EventArgs e)
+        {
+            string prisijungimoEilute = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + textBox2.Text + "; Integrated Security = True";
+            System.IO.StreamReader reader = new System.IO.StreamReader(textBox1.Text);
+            string irasymas = "INSERT INTO Komplektu_Detales(DetKodas, DetAnalog1, DetAnalog2, DetAnalog3) VALUES(@DetKodas, @DetAnalog1, @DetAnalog2, @DetAnalog3)";
+            string trynimas = "DELETE FROM Komplektu_Detales";
+            string line = null;
+            SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
+            SqlCommand komnadaTrinti =new SqlCommand(trynimas, sqlPrisijungimas);
+
+            while ((line = reader.ReadLine()) != null)
+            {
+                var data = line.Split(';');
+                
+                SqlCommand komandaIrasymas = new SqlCommand(irasymas, sqlPrisijungimas);
+
+                using (komandaIrasymas)
+                {
+                   komandaIrasymas.Parameters.AddWithValue("@DetKodas", data[0]);
+                   komandaIrasymas.Parameters.AddWithValue("@DetAnalog1", data[1]);
+                   komandaIrasymas.Parameters.AddWithValue("@DetAnalog2", data[2]);
+                   komandaIrasymas.Parameters.AddWithValue("@DetAnalog3", data[3]);
+                   sqlPrisijungimas.Open();
+                   int rezult = komandaIrasymas.ExecuteNonQuery();
+                   if (rezult < 0)
+                   {
+                      Console.WriteLine("Error inserting data into Database!");
+                   }     
+                   sqlPrisijungimas.Close();
+                }   
+                
+                
+
+            }
+
         }
     }
 }
