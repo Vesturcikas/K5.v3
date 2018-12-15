@@ -54,8 +54,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(636, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Programa skirta suskaičiuoti parduotose detalėse komplektus ir jų komplektiškumus" +
-    ".";
+            this.label1.Text = "Programa skirta suskaičiuoti parduotose detalėse komplektus ir jų komplektiškumus.";
             // 
             // K5DuomenuBaze
             // 
@@ -136,7 +135,7 @@
             this.atnaujinti_KomplektuDetaliuLentele.TabIndex = 3;
             this.atnaujinti_KomplektuDetaliuLentele.Text = "Atnaujinti";
             this.atnaujinti_KomplektuDetaliuLentele.UseVisualStyleBackColor = true;
-            this.atnaujinti_KomplektuDetaliuLentele.Click += new System.EventHandler(this.atnaujinti_KomplektuDetaliuLentele_Click);
+            //this.atnaujinti_KomplektuDetaliuLentele.Click += new System.EventHandler(this.atnaujinti_KomplektuDetaliuLentele_Click);
             // 
             // label2
             // 

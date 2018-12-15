@@ -53,6 +53,7 @@ namespace K5.v3
             textBox1.Text = ofd.FileName;
         }
 
+        /*
         private void atnaujinti_KomplektuDetaliuLentele_Click(object sender, EventArgs e)
         {
             string prisijungimoEilute = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = "+textBox2.Text+"; Integrated Security = True";
@@ -89,7 +90,7 @@ namespace K5.v3
                 
             }
 
-        }
+        }*/
 
         private void ieskoti_K5DuomenuBazes_Click(object sender, EventArgs e)
         {
@@ -115,7 +116,15 @@ namespace K5.v3
             string trynimas = "DELETE FROM Komplektu_Detales";
             string line = null;
             SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
-            SqlCommand komnadaTrinti =new SqlCommand(trynimas, sqlPrisijungimas);
+
+            SqlCommand komanadaTrinti =new SqlCommand(trynimas, sqlPrisijungimas);
+
+            using (komanadaTrinti)
+            {
+                sqlPrisijungimas.Open();
+                komanadaTrinti.ExecuteNonQuery();
+                sqlPrisijungimas.Close();
+            }
 
             while ((line = reader.ReadLine()) != null)
             {
@@ -137,11 +146,8 @@ namespace K5.v3
                    }     
                    sqlPrisijungimas.Close();
                 }   
-                
-                
-
             }
-
+            MessageBox.Show("Komplektu detalių sąrašas įrašytas į K5 duomenu bazę.");
         }
     }
 }
