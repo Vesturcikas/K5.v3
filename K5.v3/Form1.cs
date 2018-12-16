@@ -149,6 +149,12 @@ namespace K5.v3
             }
             MessageBox.Show("Komplektu detalių sąrašas įrašytas į K5 duomenu bazę.");
         }
+
+        private void redaguoti_KomplektuDetaliuLentele_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
     }
 }
 
