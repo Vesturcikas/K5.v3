@@ -44,6 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ieskoti_ParduotuDetaliuFailo = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Ieskoti_KomplektoDetaliu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -51,7 +54,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.perrasyti_KomplektuDetaliuLentele);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.Ieskoti_KomplektoDetaliu);
             this.groupBox1.Controls.Add(this.perziureti_KomplektuDetaliuLentele);
             this.groupBox1.Location = new System.Drawing.Point(24, 40);
             this.groupBox1.Name = "groupBox1";
@@ -62,12 +68,14 @@
             // 
             // perrasyti_KomplektuDetaliuLentele
             // 
+            this.perrasyti_KomplektuDetaliuLentele.Enabled = false;
             this.perrasyti_KomplektuDetaliuLentele.Location = new System.Drawing.Point(570, 95);
             this.perrasyti_KomplektuDetaliuLentele.Name = "perrasyti_KomplektuDetaliuLentele";
             this.perrasyti_KomplektuDetaliuLentele.Size = new System.Drawing.Size(186, 37);
             this.perrasyti_KomplektuDetaliuLentele.TabIndex = 1;
             this.perrasyti_KomplektuDetaliuLentele.Text = "Perrašyti";
             this.perrasyti_KomplektuDetaliuLentele.UseVisualStyleBackColor = true;
+            this.perrasyti_KomplektuDetaliuLentele.Click += new System.EventHandler(this.perrasyti_KomplektuDetaliuLentele_Click);
             // 
             // perziureti_KomplektuDetaliuLentele
             // 
@@ -174,10 +182,11 @@
             this.perziureti_K5DBParduotuDetaliuLentele.TabIndex = 3;
             this.perziureti_K5DBParduotuDetaliuLentele.Text = "Peržiūrėti";
             this.perziureti_K5DBParduotuDetaliuLentele.UseVisualStyleBackColor = true;
+            this.perziureti_K5DBParduotuDetaliuLentele.Click += new System.EventHandler(this.perziureti_K5DBParduotuDetaliuLentele_Click);
             // 
             // uzdaryti_forma3
             // 
-            this.uzdaryti_forma3.Location = new System.Drawing.Point(594, 496);
+            this.uzdaryti_forma3.Location = new System.Drawing.Point(595, 480);
             this.uzdaryti_forma3.Name = "uzdaryti_forma3";
             this.uzdaryti_forma3.Size = new System.Drawing.Size(185, 37);
             this.uzdaryti_forma3.TabIndex = 3;
@@ -213,11 +222,42 @@
             this.ieskoti_ParduotuDetaliuFailo.UseVisualStyleBackColor = true;
             this.ieskoti_ParduotuDetaliuFailo.Click += new System.EventHandler(this.ieskoti_ParduotuDetaliuFailo_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 26);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 17);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Komplekto detalių .csv failas:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(16, 47);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(546, 37);
+            this.textBox3.TabIndex = 10;
+            // 
+            // Ieskoti_KomplektoDetaliu
+            // 
+            this.Ieskoti_KomplektoDetaliu.Location = new System.Drawing.Point(570, 47);
+            this.Ieskoti_KomplektoDetaliu.Margin = new System.Windows.Forms.Padding(4);
+            this.Ieskoti_KomplektoDetaliu.Name = "Ieskoti_KomplektoDetaliu";
+            this.Ieskoti_KomplektoDetaliu.Size = new System.Drawing.Size(186, 37);
+            this.Ieskoti_KomplektoDetaliu.TabIndex = 9;
+            this.Ieskoti_KomplektoDetaliu.Text = "Ieškoti";
+            this.Ieskoti_KomplektoDetaliu.UseVisualStyleBackColor = true;
+            this.Ieskoti_KomplektoDetaliu.Click += new System.EventHandler(this.Ieskoti_KomplektoDetaliu_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.ClientSize = new System.Drawing.Size(808, 522);
             this.Controls.Add(this.uzdaryti_forma3);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -225,6 +265,7 @@
             this.Name = "Form3";
             this.Text = "K5 duomenu bazes peržiūra";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -251,5 +292,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button ieskoti_ParduotuDetaliuFailo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button Ieskoti_KomplektoDetaliu;
     }
 }

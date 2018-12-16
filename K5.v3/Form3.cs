@@ -192,5 +192,75 @@ namespace K5.v3
             }
             MessageBox.Show("Parduotų detalių sąrašas įrašytas į K5 duomenu bazę.");
         }
+
+        private void perziureti_K5DBParduotuDetaliuLentele_Click(object sender, EventArgs e)
+        {
+            Form5 forma5 = new Form5();
+            this.Close();
+            forma5.Show();
+        }
+
+        private void Ieskoti_KomplektoDetaliu_Click(object sender, EventArgs e)
+        {
+            string path = null;
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            using (ofd)
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    path = ofd.FileName;
+                }
+            }
+
+            textBox3.Text = ofd.FileName;
+            if (textBox3.Text!=null)
+            {
+                perrasyti_KomplektuDetaliuLentele.Enabled = true;
+            }
+        }
+
+        private void perrasyti_KomplektuDetaliuLentele_Click(object sender, EventArgs e)
+        {
+            string prisijungimoEilute = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vesta\source\repos\K5.V3\K5.v3\K5_DB.mdf;Integrated Security=True";
+            System.IO.StreamReader reader = new System.IO.StreamReader(textBox3.Text);
+            string irasymas = "INSERT INTO Komplektu_Detales(DetKodas, DetAnalog1, DetAnalog2, DetAnalog3) VALUES(@DetKodas, @DetAnalog1, @DetAnalog2, @DetAnalog3)";
+            string trynimas = "DELETE FROM Komplektu_Detales";
+            string line = null;
+            SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
+
+            SqlCommand komanadaTrinti = new SqlCommand(trynimas, sqlPrisijungimas);
+
+            using (komanadaTrinti)
+            {
+                sqlPrisijungimas.Open();
+                komanadaTrinti.ExecuteNonQuery();
+                sqlPrisijungimas.Close();
+            }
+
+            while ((line = reader.ReadLine()) != null)
+            {
+                var data = line.Split(';');
+
+                SqlCommand komandaIrasymas = new SqlCommand(irasymas, sqlPrisijungimas);
+
+                using (komandaIrasymas)
+                {
+                    komandaIrasymas.Parameters.AddWithValue("@DetKodas", data[0]);
+                    komandaIrasymas.Parameters.AddWithValue("@DetAnalog1", data[1]);
+                    komandaIrasymas.Parameters.AddWithValue("@DetAnalog2", data[2]);
+                    komandaIrasymas.Parameters.AddWithValue("@DetAnalog3", data[3]);
+                    sqlPrisijungimas.Open();
+                    int rezult = komandaIrasymas.ExecuteNonQuery();
+                    if (rezult < 0)
+                    {
+                        Console.WriteLine("Error inserting data into Database!");
+                    }
+                    sqlPrisijungimas.Close();
+                }
+            }
+            MessageBox.Show("Komplektu detalių sąrašas įrašytas į K5 duomenu bazę.");
+        }
     }
+    
 }

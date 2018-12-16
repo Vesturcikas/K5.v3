@@ -23,5 +23,12 @@ namespace K5.v3
             this.parduotosDetalesTableAdapter.Fill(this.k5_DBDataSet2.ParduotosDetales);
 
         }
+
+        private void uzdaryti_ParduotuDetLentele_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
     }
 }
