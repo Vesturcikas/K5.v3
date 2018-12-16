@@ -30,18 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.K5DuomenuBaze = new System.Windows.Forms.GroupBox();
+            this.perziureti_K5DuomenuBaze = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ieskoti_K5DuomenuBazes = new System.Windows.Forms.Button();
             this.Prisijungti = new System.Windows.Forms.Button();
             this.KomplektoDetales = new System.Windows.Forms.GroupBox();
             this.irasyti_KomplektuDetaliuLentele = new System.Windows.Forms.Button();
-            this.redaguoti_KomplektuDetaliuLentele = new System.Windows.Forms.Button();
             this.atnaujinti_KomplektuDetaliuLentele = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Ieskoti_KomplektoDetaliu = new System.Windows.Forms.Button();
-            this.perziureti_K5DuomenuBaze = new System.Windows.Forms.Button();
+            this.uzdaryti_forma1 = new System.Windows.Forms.Button();
             this.K5DuomenuBaze.SuspendLayout();
             this.KomplektoDetales.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,16 @@
             this.K5DuomenuBaze.TabIndex = 1;
             this.K5DuomenuBaze.TabStop = false;
             this.K5DuomenuBaze.Text = "Prisijungimas prie K5 Duomenų bazės";
+            // 
+            // perziureti_K5DuomenuBaze
+            // 
+            this.perziureti_K5DuomenuBaze.Location = new System.Drawing.Point(773, 94);
+            this.perziureti_K5DuomenuBaze.Name = "perziureti_K5DuomenuBaze";
+            this.perziureti_K5DuomenuBaze.Size = new System.Drawing.Size(188, 30);
+            this.perziureti_K5DuomenuBaze.TabIndex = 5;
+            this.perziureti_K5DuomenuBaze.Text = "Peržiūrėti";
+            this.perziureti_K5DuomenuBaze.UseVisualStyleBackColor = true;
+            this.perziureti_K5DuomenuBaze.Click += new System.EventHandler(this.perziureti_K5DuomenuBaze_Click);
             // 
             // label3
             // 
@@ -116,7 +126,6 @@
             // KomplektoDetales
             // 
             this.KomplektoDetales.Controls.Add(this.irasyti_KomplektuDetaliuLentele);
-            this.KomplektoDetales.Controls.Add(this.redaguoti_KomplektuDetaliuLentele);
             this.KomplektoDetales.Controls.Add(this.atnaujinti_KomplektuDetaliuLentele);
             this.KomplektoDetales.Controls.Add(this.label2);
             this.KomplektoDetales.Controls.Add(this.textBox1);
@@ -139,16 +148,6 @@
             this.irasyti_KomplektuDetaliuLentele.Text = "Įrašyti";
             this.irasyti_KomplektuDetaliuLentele.UseVisualStyleBackColor = true;
             this.irasyti_KomplektuDetaliuLentele.Click += new System.EventHandler(this.irasyti_KomplektuDetaliuLentele_Click);
-            // 
-            // redaguoti_KomplektuDetaliuLentele
-            // 
-            this.redaguoti_KomplektuDetaliuLentele.Location = new System.Drawing.Point(776, 101);
-            this.redaguoti_KomplektuDetaliuLentele.Name = "redaguoti_KomplektuDetaliuLentele";
-            this.redaguoti_KomplektuDetaliuLentele.Size = new System.Drawing.Size(188, 30);
-            this.redaguoti_KomplektuDetaliuLentele.TabIndex = 4;
-            this.redaguoti_KomplektuDetaliuLentele.Text = "Peržiūrėti";
-            this.redaguoti_KomplektuDetaliuLentele.UseVisualStyleBackColor = true;
-            this.redaguoti_KomplektuDetaliuLentele.Click += new System.EventHandler(this.redaguoti_KomplektuDetaliuLentele_Click);
             // 
             // atnaujinti_KomplektuDetaliuLentele
             // 
@@ -189,20 +188,22 @@
             this.Ieskoti_KomplektoDetaliu.UseVisualStyleBackColor = true;
             this.Ieskoti_KomplektoDetaliu.Click += new System.EventHandler(this.Ieskoti_KomplektoDetaliu_Click);
             // 
-            // perziureti_K5DuomenuBaze
+            // uzdaryti_forma1
             // 
-            this.perziureti_K5DuomenuBaze.Location = new System.Drawing.Point(773, 94);
-            this.perziureti_K5DuomenuBaze.Name = "perziureti_K5DuomenuBaze";
-            this.perziureti_K5DuomenuBaze.Size = new System.Drawing.Size(188, 30);
-            this.perziureti_K5DuomenuBaze.TabIndex = 5;
-            this.perziureti_K5DuomenuBaze.Text = "Peržiūrėti";
-            this.perziureti_K5DuomenuBaze.UseVisualStyleBackColor = true;
+            this.uzdaryti_forma1.Location = new System.Drawing.Point(798, 571);
+            this.uzdaryti_forma1.Name = "uzdaryti_forma1";
+            this.uzdaryti_forma1.Size = new System.Drawing.Size(188, 37);
+            this.uzdaryti_forma1.TabIndex = 3;
+            this.uzdaryti_forma1.Text = "Baigti";
+            this.uzdaryti_forma1.UseVisualStyleBackColor = true;
+            this.uzdaryti_forma1.Click += new System.EventHandler(this.uzdaryti_forma1_Click);
             // 
             // K5skaiciavimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 620);
+            this.Controls.Add(this.uzdaryti_forma1);
             this.Controls.Add(this.KomplektoDetales);
             this.Controls.Add(this.K5DuomenuBaze);
             this.Controls.Add(this.label1);
@@ -232,9 +233,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button ieskoti_K5DuomenuBazes;
-        private System.Windows.Forms.Button redaguoti_KomplektuDetaliuLentele;
         private System.Windows.Forms.Button irasyti_KomplektuDetaliuLentele;
         private System.Windows.Forms.Button perziureti_K5DuomenuBaze;
+        private System.Windows.Forms.Button uzdaryti_forma1;
     }
 }
 

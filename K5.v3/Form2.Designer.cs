@@ -31,34 +31,35 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.komplektuDetalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.k5_DBDataSet = new K5.v3.K5_DBDataSet();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.k5_DBDataSet = new K5.v3.K5_DBDataSet();
-            this.komplektuDetalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.komplektu_DetalesTableAdapter = new K5.v3.K5_DBDataSetTableAdapters.Komplektu_DetalesTableAdapter();
+            this.uzdaryti_Forma2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.komplektuDetalesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.komplektuDetalesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -77,6 +78,57 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Komplekto detales analogai:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetAnalog3", true));
+            this.textBox4.Location = new System.Drawing.Point(291, 155);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(317, 22);
+            this.textBox4.TabIndex = 7;
+            // 
+            // komplektuDetalesBindingSource
+            // 
+            this.komplektuDetalesBindingSource.DataMember = "Komplektu_Detales";
+            this.komplektuDetalesBindingSource.DataSource = this.k5_DBDataSet;
+            // 
+            // k5_DBDataSet
+            // 
+            this.k5_DBDataSet.DataSetName = "K5_DBDataSet";
+            this.k5_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetAnalog2", true));
+            this.textBox3.Location = new System.Drawing.Point(291, 117);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(317, 22);
+            this.textBox3.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetAnalog1", true));
+            this.textBox2.Location = new System.Drawing.Point(291, 75);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(317, 22);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetKodas", true));
+            this.textBox1.Location = new System.Drawing.Point(207, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(401, 22);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(93, 158);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Detalės analogo Nr. 3 kodas:";
             // 
             // label3
             // 
@@ -104,47 +156,6 @@
             this.label1.Size = new System.Drawing.Size(170, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Komplekto detalės kodas:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Detalės analogo Nr. 3 kodas:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetKodas", true));
-            this.textBox1.Location = new System.Drawing.Point(207, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(401, 22);
-            this.textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetAnalog1", true));
-            this.textBox2.Location = new System.Drawing.Point(291, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(317, 22);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetAnalog2", true));
-            this.textBox3.Location = new System.Drawing.Point(291, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(317, 22);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.komplektuDetalesBindingSource, "DetAnalog3", true));
-            this.textBox4.Location = new System.Drawing.Point(291, 155);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(317, 22);
-            this.textBox4.TabIndex = 7;
             // 
             // bindingNavigator1
             // 
@@ -175,6 +186,31 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(657, 27);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -208,16 +244,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -240,58 +269,41 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // k5_DBDataSet
-            // 
-            this.k5_DBDataSet.DataSetName = "K5_DBDataSet";
-            this.k5_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // komplektuDetalesBindingSource
-            // 
-            this.komplektuDetalesBindingSource.DataMember = "Komplektu_Detales";
-            this.komplektuDetalesBindingSource.DataSource = this.k5_DBDataSet;
             // 
             // komplektu_DetalesTableAdapter
             // 
             this.komplektu_DetalesTableAdapter.ClearBeforeFill = true;
             // 
+            // uzdaryti_Forma2
+            // 
+            this.uzdaryti_Forma2.Location = new System.Drawing.Point(498, 300);
+            this.uzdaryti_Forma2.Name = "uzdaryti_Forma2";
+            this.uzdaryti_Forma2.Size = new System.Drawing.Size(146, 38);
+            this.uzdaryti_Forma2.TabIndex = 2;
+            this.uzdaryti_Forma2.Text = "Baigti";
+            this.uzdaryti_Forma2.UseVisualStyleBackColor = true;
+            this.uzdaryti_Forma2.Click += new System.EventHandler(this.uzdaryti_Forma2_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 300);
+            this.ClientSize = new System.Drawing.Size(657, 349);
+            this.Controls.Add(this.uzdaryti_Forma2);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form2";
-            this.Text = "K5. Komplektu detalių sąrašo redagavimas:";
+            this.Text = "K5. Komplektu detalių sąrašo peržiūra:";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.komplektuDetalesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.komplektuDetalesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +335,6 @@
         private K5_DBDataSet k5_DBDataSet;
         private System.Windows.Forms.BindingSource komplektuDetalesBindingSource;
         private K5_DBDataSetTableAdapters.Komplektu_DetalesTableAdapter komplektu_DetalesTableAdapter;
+        private System.Windows.Forms.Button uzdaryti_Forma2;
     }
 }

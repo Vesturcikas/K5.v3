@@ -23,5 +23,12 @@ namespace K5.v3
             this.komplektu_DetalesTableAdapter.Fill(this.k5_DBDataSet.Komplektu_Detales);
 
         }
+
+        private void uzdaryti_Forma2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
     }
 }
