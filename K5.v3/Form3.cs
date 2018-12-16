@@ -29,5 +29,12 @@ namespace K5.v3
             this.Close();
 
         }
+
+        private void perziureti_KomplektuLentele_Click(object sender, EventArgs e)
+        {
+            Form4 forma4 = new Form4();
+            this.Close();
+            forma4.Show();
+        }
     }
 }

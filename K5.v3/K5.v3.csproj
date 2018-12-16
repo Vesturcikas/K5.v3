@@ -90,6 +90,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>K5_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="K5_DBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>K5_DBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -123,6 +128,17 @@
     </None>
     <None Include="K5_DBDataSet.xss">
       <DependentUpon>K5_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="K5_DBDataSet1.xsc">
+      <DependentUpon>K5_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="K5_DBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>K5_DBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="K5_DBDataSet1.xss">
+      <DependentUpon>K5_DBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
