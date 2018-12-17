@@ -36,8 +36,16 @@
             this.ieskoti_K5DuomenuBazes = new System.Windows.Forms.Button();
             this.Prisijungti = new System.Windows.Forms.Button();
             this.KomplektoDetales = new System.Windows.Forms.GroupBox();
+            this.skaiciuoti_K5 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.uzdaryti_forma1 = new System.Windows.Forms.Button();
             this.K5DuomenuBaze.SuspendLayout();
+            this.KomplektoDetales.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -119,14 +127,71 @@
             // 
             // KomplektoDetales
             // 
+            this.KomplektoDetales.Controls.Add(this.skaiciuoti_K5);
+            this.KomplektoDetales.Controls.Add(this.groupBox1);
             this.KomplektoDetales.Location = new System.Drawing.Point(22, 210);
             this.KomplektoDetales.Margin = new System.Windows.Forms.Padding(4);
             this.KomplektoDetales.Name = "KomplektoDetales";
             this.KomplektoDetales.Padding = new System.Windows.Forms.Padding(4);
-            this.KomplektoDetales.Size = new System.Drawing.Size(971, 138);
+            this.KomplektoDetales.Size = new System.Drawing.Size(971, 343);
             this.KomplektoDetales.TabIndex = 2;
             this.KomplektoDetales.TabStop = false;
-            this.KomplektoDetales.Text = "Komplekto detalės";
+            this.KomplektoDetales.Text = "Komplektų pardavimai";
+            // 
+            // skaiciuoti_K5
+            // 
+            this.skaiciuoti_K5.Location = new System.Drawing.Point(7, 305);
+            this.skaiciuoti_K5.Name = "skaiciuoti_K5";
+            this.skaiciuoti_K5.Size = new System.Drawing.Size(188, 31);
+            this.skaiciuoti_K5.TabIndex = 1;
+            this.skaiciuoti_K5.Text = "Skaičiuoti K5";
+            this.skaiciuoti_K5.UseVisualStyleBackColor = true;
+            this.skaiciuoti_K5.Click += new System.EventHandler(this.skaiciuoti_K5_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Location = new System.Drawing.Point(11, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(307, 103);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Kauno pad.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(45, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Kauno serv.:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Kauno real.:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(153, 60);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(132, 27);
+            this.textBox3.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(153, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 27);
+            this.textBox1.TabIndex = 0;
             // 
             // uzdaryti_forma1
             // 
@@ -153,6 +218,9 @@
             this.Text = "K5 skaičiavimas";
             this.K5DuomenuBaze.ResumeLayout(false);
             this.K5DuomenuBaze.PerformLayout();
+            this.KomplektoDetales.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +237,12 @@
         private System.Windows.Forms.Button ieskoti_K5DuomenuBazes;
         private System.Windows.Forms.Button perziureti_K5DuomenuBaze;
         private System.Windows.Forms.Button uzdaryti_forma1;
+        private System.Windows.Forms.Button skaiciuoti_K5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="K5_DB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\K5_DB.mdf;Integrated Security=True" SettingsObjectName="K5.v3.Properties.Settings" SettingsPropertyName="K5_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Komplektu_Detales" Member="Komplektu_Detales">
+    <Type Name="Komplektu_Detale">
+      <Column Name="DetKodas" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DetAnalog1" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DetAnalog2" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DetAnalog3" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Komplektai" Member="Komplektais">
+    <Type Name="Komplektai">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KomplektoKodas" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Pavadinimas" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Det1Kodas" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Det1Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det2Kodas" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Det2Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det3Kodas" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Det3Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det4Kodas" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Det4Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det5Kodas" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Det5Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det6Kodas" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Det6Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det7Kodas" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Det7Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det8Kodas" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Det8Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Det9Kodas" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Det9Kiekis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ParduotosDetales" Member="ParduotosDetales">
+    <Type Name="ParduotosDetale">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PardavimoSaskaitosNr" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DetKodas" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Pavadinimas" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Kiekis" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Matas" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="KiekisSuMatu" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Pardavejas" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PardavimoSuma" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="rezerv" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

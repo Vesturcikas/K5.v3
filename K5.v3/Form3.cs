@@ -52,6 +52,9 @@ namespace K5.v3
             }
 
             textBox1.Text = ofd.FileName;
+
+
+
         }
 
         private void perrasyti_KomplektuLenteleK5DB_Click(object sender, EventArgs e)

@@ -131,6 +131,7 @@
             // 
             // perrasyti_KomplektuLenteleK5DB
             // 
+            this.perrasyti_KomplektuLenteleK5DB.Enabled = false;
             this.perrasyti_KomplektuLenteleK5DB.Location = new System.Drawing.Point(570, 84);
             this.perrasyti_KomplektuLenteleK5DB.Name = "perrasyti_KomplektuLenteleK5DB";
             this.perrasyti_KomplektuLenteleK5DB.Size = new System.Drawing.Size(186, 37);

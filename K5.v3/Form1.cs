@@ -37,47 +37,6 @@ namespace K5.v3
             
         }*/
 
-        
-
-        /*
-        private void atnaujinti_KomplektuDetaliuLentele_Click(object sender, EventArgs e)
-        {
-            string prisijungimoEilute = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = "+textBox2.Text+"; Integrated Security = True";
-
-            System.IO.StreamReader reader = new System.IO.StreamReader(textBox1.Text);
-
-            string line = null;
-            string naujasAnalog1=null;
-            string naujasAnalog2=null;
-            string naujasAnalog3=null;
-            string detKodas=null;
-
-            string atnaujinimas = "UPDATE Komplektu_Detales SET DetAnalog1 ="+naujasAnalog1+" , DetAnalog2 ="+naujasAnalog2+", DetAnalog3 = "+naujasAnalog3+"WHERE DetKodas ="+detKodas;
-            
-            string isrinkimas = "SELECT * FROM Komlektu_Detales WHERE DetKodas =" + detKodas;
-
-            while ((line = reader.ReadLine()) != null)
-            {
-                var data = line.Split(';');
-
-                detKodas = data[0];
-                naujasAnalog1 = data[1];
-                naujasAnalog2 = data[2];
-                naujasAnalog3 = data[3];
-
-                SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
-                SqlCommand komndaIsrinkimas = new SqlCommand(isrinkimas, sqlPrisijungimas);
-                SqlDataReader nuskaitymas = null;
-                sqlPrisijungimas.Open();
-                nuskaitymas = komndaIsrinkimas.ExecuteReader();
-
-                
-                sqlPrisijungimas.Close();
-                
-            }
-
-        }*/
-
         private void ieskoti_K5DuomenuBazes_Click(object sender, EventArgs e)
         {
             string path = null;
@@ -104,6 +63,53 @@ namespace K5.v3
         private void uzdaryti_forma1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void skaiciuoti_K5_Click(object sender, EventArgs e)
+        {
+            string prisijungimoEilute = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\vesta\source\repos\K5.v3\K5.v3\K5_DB.mdf; Integrated Security = True";
+
+            SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
+
+            //string sujungti_Vid = "SELECT Komplektai.Id, ParduotosDetales.Id, PardavimoSaskaitosNr, DetKodas, Kiekis, Pardavejas FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='KN-Serv'";
+            string sumuotiKN_Serv_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='KN-Serv'";
+            string sumuotiKN_Real_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='KN-Real'";
+
+
+            SqlCommand sumavimas_KNserv = new SqlCommand(sumuotiKN_Serv_Vid, sqlPrisijungimas);
+
+            using (sumavimas_KNserv)
+            {
+                sqlPrisijungimas.Open();
+                SqlDataReader reader = sumavimas_KNserv.ExecuteReader();
+                while (reader.Read())
+                {
+                    textBox3.Text = String.Format("{0}", reader[0]);
+                    Console.WriteLine(String.Format("{0}", reader[0])); 
+                }
+          
+                sqlPrisijungimas.Close();
+                
+            }
+
+            SqlCommand sumavimas_KNreal = new SqlCommand(sumuotiKN_Real_Vid, sqlPrisijungimas);
+            using (sumavimas_KNreal)
+            {
+                sqlPrisijungimas.Open();
+
+                SqlDataReader reader1 = sumavimas_KNreal.ExecuteReader();
+                while (reader1.Read())
+                {
+                    textBox1.Text = String.Format("{0}", reader1[0]);
+                    Console.WriteLine(String.Format("{0}", reader1[0]));
+                }
+                reader1.Close();
+                sqlPrisijungimas.Close();
+
+            }
+
+           
+
         }
     }
 }
