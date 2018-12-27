@@ -53,8 +53,6 @@ namespace K5.v3
 
             textBox1.Text = ofd.FileName;
 
-
-
         }
 
         private void perrasyti_KomplektuLenteleK5DB_Click(object sender, EventArgs e)
@@ -147,15 +145,16 @@ namespace K5.v3
 
             System.IO.StreamReader reader = new System.IO.StreamReader(textBox2.Text);
 
-            string trynimas = "DELETE FROM ParduotosDetales";
+            //string trynimas = "DELETE FROM ParduotosDetales";
 
-            string irasymas = "INSERT INTO ParduotosDetales(Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, KiekisSuMatu, Pardavejas, PardavimoSuma)" +
-                "VALUES(@Id, @PardavimoSaskaitosNr, @DetKodas, @Pavadinimas, @Kiekis, @Matas, @KiekisSuMatu, @Pardavejas, @PardavimoSuma)";
+            string irasymas = "INSERT INTO ParduotosDetales(Id, Data, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, KiekisSuMatu, Pardavejas, PardavimoSuma)" +
+                "VALUES(@Id, @Data, @PardavimoSaskaitosNr, @DetKodas, @Pavadinimas, @Kiekis, @Matas, @KiekisSuMatu, @Pardavejas, @PardavimoSuma)";
 
             string line = null;
 
             SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
 
+            /*
             SqlCommand komanadaTrinti = new SqlCommand(trynimas, sqlPrisijungimas);
 
             using (komanadaTrinti)
@@ -164,25 +163,26 @@ namespace K5.v3
                 komanadaTrinti.ExecuteNonQuery();
                 sqlPrisijungimas.Close();
             }
-
+            */
 
             while ((line = reader.ReadLine()) != null)
             {
-                var data = line.Split(';');
+                var data = line.Split(',');
 
                 SqlCommand komandaIrasymas = new SqlCommand(irasymas, sqlPrisijungimas);
 
                 using (komandaIrasymas)
                 {
                     komandaIrasymas.Parameters.AddWithValue("@Id", data[0]);
-                    komandaIrasymas.Parameters.AddWithValue("@PardavimoSaskaitosNr", data[1]);
-                    komandaIrasymas.Parameters.AddWithValue("@DetKodas", data[2]);
-                    komandaIrasymas.Parameters.AddWithValue("@Pavadinimas", data[3]);
-                    komandaIrasymas.Parameters.AddWithValue("@Kiekis", data[4]);
-                    komandaIrasymas.Parameters.AddWithValue("@Matas", data[5]);
-                    komandaIrasymas.Parameters.AddWithValue("@KiekisSuMatu", data[6]);
-                    komandaIrasymas.Parameters.AddWithValue("@Pardavejas", data[7]);
-                    komandaIrasymas.Parameters.AddWithValue("@PardavimoSuma", data[8]);
+                    komandaIrasymas.Parameters.AddWithValue("@Data", data[1]);
+                    komandaIrasymas.Parameters.AddWithValue("@PardavimoSaskaitosNr", data[2]);
+                    komandaIrasymas.Parameters.AddWithValue("@DetKodas", data[3]);
+                    komandaIrasymas.Parameters.AddWithValue("@Pavadinimas", data[4]);
+                    komandaIrasymas.Parameters.AddWithValue("@Kiekis", data[5]);
+                    komandaIrasymas.Parameters.AddWithValue("@Matas", data[6]);
+                    komandaIrasymas.Parameters.AddWithValue("@KiekisSuMatu", data[7]);
+                    komandaIrasymas.Parameters.AddWithValue("@Pardavejas", data[8]);
+                    komandaIrasymas.Parameters.AddWithValue("@PardavimoSuma", data[9]);
 
                     sqlPrisijungimas.Open();
                     int rezult = komandaIrasymas.ExecuteNonQuery();

@@ -21,6 +21,8 @@ namespace K5.v3
         {
             // TODO: This line of code loads data into the 'k5_DBDataSet2.ParduotosDetales' table. You can move, or remove it, as needed.
             this.parduotosDetalesTableAdapter.Fill(this.k5_DBDataSet2.ParduotosDetales);
+            // TODO: This line of code loads data into the 'k5_DBDataSet2.ParduotosDetales' table. You can move, or remove it, as needed.
+            this.parduotosDetalesTableAdapter.Fill(this.k5_DBDataSet2.ParduotosDetales);
 
         }
 
@@ -29,6 +31,11 @@ namespace K5.v3
             this.Close();
             Form3 form3 = new Form3();
             form3.Show();
+        }
+
+        private void parduotosDetalesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

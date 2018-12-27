@@ -281,6 +281,8 @@ namespace K5.v3 {
             
             private global::System.Data.DataColumn columnId;
             
+            private global::System.Data.DataColumn columnData;
+            
             private global::System.Data.DataColumn columnPardavimoSaskaitosNr;
             
             private global::System.Data.DataColumn columnDetKodas;
@@ -290,6 +292,8 @@ namespace K5.v3 {
             private global::System.Data.DataColumn columnKiekis;
             
             private global::System.Data.DataColumn columnMatas;
+            
+            private global::System.Data.DataColumn columnKiekisSuMatu;
             
             private global::System.Data.DataColumn columnPardavejas;
             
@@ -338,6 +342,14 @@ namespace K5.v3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DataColumn {
+                get {
+                    return this.columnData;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn PardavimoSaskaitosNrColumn {
                 get {
                     return this.columnPardavimoSaskaitosNr;
@@ -373,6 +385,14 @@ namespace K5.v3 {
             public global::System.Data.DataColumn MatasColumn {
                 get {
                     return this.columnMatas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn KiekisSuMatuColumn {
+                get {
+                    return this.columnKiekisSuMatu;
                 }
             }
             
@@ -429,15 +449,17 @@ namespace K5.v3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ParduotosDetalesRow AddParduotosDetalesRow(int Id, string PardavimoSaskaitosNr, string DetKodas, string Pavadinimas, string Kiekis, string Matas, string Pardavejas, string PardavimoSuma) {
+            public ParduotosDetalesRow AddParduotosDetalesRow(int Id, System.DateTime Data, string PardavimoSaskaitosNr, string DetKodas, string Pavadinimas, decimal Kiekis, string Matas, string KiekisSuMatu, string Pardavejas, string PardavimoSuma) {
                 ParduotosDetalesRow rowParduotosDetalesRow = ((ParduotosDetalesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
+                        Data,
                         PardavimoSaskaitosNr,
                         DetKodas,
                         Pavadinimas,
                         Kiekis,
                         Matas,
+                        KiekisSuMatu,
                         Pardavejas,
                         PardavimoSuma};
                 rowParduotosDetalesRow.ItemArray = columnValuesArray;
@@ -470,11 +492,13 @@ namespace K5.v3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
+                this.columnData = base.Columns["Data"];
                 this.columnPardavimoSaskaitosNr = base.Columns["PardavimoSaskaitosNr"];
                 this.columnDetKodas = base.Columns["DetKodas"];
                 this.columnPavadinimas = base.Columns["Pavadinimas"];
                 this.columnKiekis = base.Columns["Kiekis"];
                 this.columnMatas = base.Columns["Matas"];
+                this.columnKiekisSuMatu = base.Columns["KiekisSuMatu"];
                 this.columnPardavejas = base.Columns["Pardavejas"];
                 this.columnPardavimoSuma = base.Columns["PardavimoSuma"];
             }
@@ -484,16 +508,20 @@ namespace K5.v3 {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnData = new global::System.Data.DataColumn("Data", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData);
                 this.columnPardavimoSaskaitosNr = new global::System.Data.DataColumn("PardavimoSaskaitosNr", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPardavimoSaskaitosNr);
                 this.columnDetKodas = new global::System.Data.DataColumn("DetKodas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDetKodas);
                 this.columnPavadinimas = new global::System.Data.DataColumn("Pavadinimas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPavadinimas);
-                this.columnKiekis = new global::System.Data.DataColumn("Kiekis", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnKiekis = new global::System.Data.DataColumn("Kiekis", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKiekis);
                 this.columnMatas = new global::System.Data.DataColumn("Matas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMatas);
+                this.columnKiekisSuMatu = new global::System.Data.DataColumn("KiekisSuMatu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKiekisSuMatu);
                 this.columnPardavejas = new global::System.Data.DataColumn("Pardavejas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPardavejas);
                 this.columnPardavimoSuma = new global::System.Data.DataColumn("PardavimoSuma", typeof(string), null, global::System.Data.MappingType.Element);
@@ -505,8 +533,8 @@ namespace K5.v3 {
                 this.columnPardavimoSaskaitosNr.MaxLength = 15;
                 this.columnDetKodas.MaxLength = 20;
                 this.columnPavadinimas.MaxLength = 100;
-                this.columnKiekis.MaxLength = 10;
                 this.columnMatas.MaxLength = 10;
+                this.columnKiekisSuMatu.MaxLength = 15;
                 this.columnPardavejas.MaxLength = 30;
                 this.columnPardavimoSuma.MaxLength = 10;
             }
@@ -662,6 +690,22 @@ namespace K5.v3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Data {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableParduotosDetales.DataColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Data\' in table \'ParduotosDetales\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableParduotosDetales.DataColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PardavimoSaskaitosNr {
                 get {
                     try {
@@ -711,10 +755,10 @@ namespace K5.v3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Kiekis {
+            public decimal Kiekis {
                 get {
                     try {
-                        return ((string)(this[this.tableParduotosDetales.KiekisColumn]));
+                        return ((decimal)(this[this.tableParduotosDetales.KiekisColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Kiekis\' in table \'ParduotosDetales\' is DBNull.", e);
@@ -738,6 +782,22 @@ namespace K5.v3 {
                 }
                 set {
                     this[this.tableParduotosDetales.MatasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string KiekisSuMatu {
+                get {
+                    try {
+                        return ((string)(this[this.tableParduotosDetales.KiekisSuMatuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KiekisSuMatu\' in table \'ParduotosDetales\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableParduotosDetales.KiekisSuMatuColumn] = value;
                 }
             }
             
@@ -771,6 +831,18 @@ namespace K5.v3 {
                 set {
                     this[this.tableParduotosDetales.PardavimoSumaColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDataNull() {
+                return this.IsNull(this.tableParduotosDetales.DataColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDataNull() {
+                this[this.tableParduotosDetales.DataColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -831,6 +903,18 @@ namespace K5.v3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetMatasNull() {
                 this[this.tableParduotosDetales.MatasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsKiekisSuMatuNull() {
+                return this.IsNull(this.tableParduotosDetales.KiekisSuMatuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetKiekisSuMatuNull() {
+                this[this.tableParduotosDetales.KiekisSuMatuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1018,19 +1102,23 @@ namespace K5.v3.K5_DBDataSet2TableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ParduotosDetales";
             tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("Data", "Data");
             tableMapping.ColumnMappings.Add("PardavimoSaskaitosNr", "PardavimoSaskaitosNr");
             tableMapping.ColumnMappings.Add("DetKodas", "DetKodas");
             tableMapping.ColumnMappings.Add("Pavadinimas", "Pavadinimas");
             tableMapping.ColumnMappings.Add("Kiekis", "Kiekis");
             tableMapping.ColumnMappings.Add("Matas", "Matas");
+            tableMapping.ColumnMappings.Add("KiekisSuMatu", "KiekisSuMatu");
             tableMapping.ColumnMappings.Add("Pardavejas", "Pardavejas");
             tableMapping.ColumnMappings.Add("PardavimoSuma", "PardavimoSuma");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ParduotosDetales] WHERE (([Id] = @Original_Id) AND ((@IsNull_PardavimoSaskaitosNr = 1 AND [PardavimoSaskaitosNr] IS NULL) OR ([PardavimoSaskaitosNr] = @Original_PardavimoSaskaitosNr)) AND ((@IsNull_DetKodas = 1 AND [DetKodas] IS NULL) OR ([DetKodas] = @Original_DetKodas)) AND ((@IsNull_Pavadinimas = 1 AND [Pavadinimas] IS NULL) OR ([Pavadinimas] = @Original_Pavadinimas)) AND ((@IsNull_Kiekis = 1 AND [Kiekis] IS NULL) OR ([Kiekis] = @Original_Kiekis)) AND ((@IsNull_Matas = 1 AND [Matas] IS NULL) OR ([Matas] = @Original_Matas)) AND ((@IsNull_Pardavejas = 1 AND [Pardavejas] IS NULL) OR ([Pardavejas] = @Original_Pardavejas)) AND ((@IsNull_PardavimoSuma = 1 AND [PardavimoSuma] IS NULL) OR ([PardavimoSuma] = @Original_PardavimoSuma)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ParduotosDetales] WHERE (([Id] = @Original_Id) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_PardavimoSaskaitosNr = 1 AND [PardavimoSaskaitosNr] IS NULL) OR ([PardavimoSaskaitosNr] = @Original_PardavimoSaskaitosNr)) AND ((@IsNull_DetKodas = 1 AND [DetKodas] IS NULL) OR ([DetKodas] = @Original_DetKodas)) AND ((@IsNull_Pavadinimas = 1 AND [Pavadinimas] IS NULL) OR ([Pavadinimas] = @Original_Pavadinimas)) AND ((@IsNull_Kiekis = 1 AND [Kiekis] IS NULL) OR ([Kiekis] = @Original_Kiekis)) AND ((@IsNull_Matas = 1 AND [Matas] IS NULL) OR ([Matas] = @Original_Matas)) AND ((@IsNull_KiekisSuMatu = 1 AND [KiekisSuMatu] IS NULL) OR ([KiekisSuMatu] = @Original_KiekisSuMatu)) AND ((@IsNull_Pardavejas = 1 AND [Pardavejas] IS NULL) OR ([Pardavejas] = @Original_Pardavejas)) AND ((@IsNull_PardavimoSuma = 1 AND [PardavimoSuma] IS NULL) OR ([PardavimoSuma] = @Original_PardavimoSuma)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PardavimoSaskaitosNr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSaskaitosNr", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PardavimoSaskaitosNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSaskaitosNr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DetKodas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetKodas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1038,40 +1126,48 @@ namespace K5.v3.K5_DBDataSet2TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pavadinimas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pavadinimas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kiekis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kiekis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kiekis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kiekis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kiekis", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Kiekis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Matas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Matas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KiekisSuMatu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KiekisSuMatu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KiekisSuMatu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KiekisSuMatu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pardavejas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pardavejas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pardavejas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pardavejas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PardavimoSuma", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSuma", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PardavimoSuma", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSuma", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ParduotosDetales] ([Id], [PardavimoSaskaitosNr], [DetKodas], [Pavadinimas], [Kiekis], [Matas], [Pardavejas], [PardavimoSuma]) VALUES (@Id, @PardavimoSaskaitosNr, @DetKodas, @Pavadinimas, @Kiekis, @Matas, @Pardavejas, @PardavimoSuma);
-SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardavejas, PardavimoSuma FROM ParduotosDetales WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ParduotosDetales] ([Id], [Data], [PardavimoSaskaitosNr], [DetKodas], [Pavadinimas], [Kiekis], [Matas], [KiekisSuMatu], [Pardavejas], [PardavimoSuma]) VALUES (@Id, @Data, @PardavimoSaskaitosNr, @DetKodas, @Pavadinimas, @Kiekis, @Matas, @KiekisSuMatu, @Pardavejas, @PardavimoSuma);
+SELECT Id, Data, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, KiekisSuMatu, Pardavejas, PardavimoSuma FROM ParduotosDetales WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PardavimoSaskaitosNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSaskaitosNr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetKodas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetKodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kiekis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kiekis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kiekis", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Kiekis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KiekisSuMatu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KiekisSuMatu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pardavejas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pardavejas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PardavimoSuma", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSuma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ParduotosDetales] SET [Id] = @Id, [PardavimoSaskaitosNr] = @PardavimoSaskaitosNr, [DetKodas] = @DetKodas, [Pavadinimas] = @Pavadinimas, [Kiekis] = @Kiekis, [Matas] = @Matas, [Pardavejas] = @Pardavejas, [PardavimoSuma] = @PardavimoSuma WHERE (([Id] = @Original_Id) AND ((@IsNull_PardavimoSaskaitosNr = 1 AND [PardavimoSaskaitosNr] IS NULL) OR ([PardavimoSaskaitosNr] = @Original_PardavimoSaskaitosNr)) AND ((@IsNull_DetKodas = 1 AND [DetKodas] IS NULL) OR ([DetKodas] = @Original_DetKodas)) AND ((@IsNull_Pavadinimas = 1 AND [Pavadinimas] IS NULL) OR ([Pavadinimas] = @Original_Pavadinimas)) AND ((@IsNull_Kiekis = 1 AND [Kiekis] IS NULL) OR ([Kiekis] = @Original_Kiekis)) AND ((@IsNull_Matas = 1 AND [Matas] IS NULL) OR ([Matas] = @Original_Matas)) AND ((@IsNull_Pardavejas = 1 AND [Pardavejas] IS NULL) OR ([Pardavejas] = @Original_Pardavejas)) AND ((@IsNull_PardavimoSuma = 1 AND [PardavimoSuma] IS NULL) OR ([PardavimoSuma] = @Original_PardavimoSuma)));
-SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardavejas, PardavimoSuma FROM ParduotosDetales WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ParduotosDetales] SET [Id] = @Id, [Data] = @Data, [PardavimoSaskaitosNr] = @PardavimoSaskaitosNr, [DetKodas] = @DetKodas, [Pavadinimas] = @Pavadinimas, [Kiekis] = @Kiekis, [Matas] = @Matas, [KiekisSuMatu] = @KiekisSuMatu, [Pardavejas] = @Pardavejas, [PardavimoSuma] = @PardavimoSuma WHERE (([Id] = @Original_Id) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_PardavimoSaskaitosNr = 1 AND [PardavimoSaskaitosNr] IS NULL) OR ([PardavimoSaskaitosNr] = @Original_PardavimoSaskaitosNr)) AND ((@IsNull_DetKodas = 1 AND [DetKodas] IS NULL) OR ([DetKodas] = @Original_DetKodas)) AND ((@IsNull_Pavadinimas = 1 AND [Pavadinimas] IS NULL) OR ([Pavadinimas] = @Original_Pavadinimas)) AND ((@IsNull_Kiekis = 1 AND [Kiekis] IS NULL) OR ([Kiekis] = @Original_Kiekis)) AND ((@IsNull_Matas = 1 AND [Matas] IS NULL) OR ([Matas] = @Original_Matas)) AND ((@IsNull_KiekisSuMatu = 1 AND [KiekisSuMatu] IS NULL) OR ([KiekisSuMatu] = @Original_KiekisSuMatu)) AND ((@IsNull_Pardavejas = 1 AND [Pardavejas] IS NULL) OR ([Pardavejas] = @Original_Pardavejas)) AND ((@IsNull_PardavimoSuma = 1 AND [PardavimoSuma] IS NULL) OR ([PardavimoSuma] = @Original_PardavimoSuma)));
+SELECT Id, Data, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, KiekisSuMatu, Pardavejas, PardavimoSuma FROM ParduotosDetales WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PardavimoSaskaitosNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSaskaitosNr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetKodas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetKodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kiekis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kiekis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kiekis", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Kiekis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KiekisSuMatu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KiekisSuMatu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pardavejas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pardavejas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PardavimoSuma", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSuma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PardavimoSaskaitosNr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSaskaitosNr", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PardavimoSaskaitosNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSaskaitosNr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DetKodas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetKodas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1079,9 +1175,11 @@ SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardaveja
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pavadinimas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pavadinimas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kiekis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kiekis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kiekis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kiekis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kiekis", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Kiekis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Matas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Matas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KiekisSuMatu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KiekisSuMatu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KiekisSuMatu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KiekisSuMatu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pardavejas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pardavejas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pardavejas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pardavejas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PardavimoSuma", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PardavimoSuma", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1101,8 +1199,8 @@ SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardaveja
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardavejas" +
-                ", PardavimoSuma FROM dbo.ParduotosDetales";
+            this._commandCollection[0].CommandText = "SELECT Id, Data, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Kiek" +
+                "isSuMatu, Pardavejas, PardavimoSuma FROM dbo.ParduotosDetales";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1163,63 +1261,79 @@ SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardaveja
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_PardavimoSaskaitosNr, string Original_DetKodas, string Original_Pavadinimas, string Original_Kiekis, string Original_Matas, string Original_Pardavejas, string Original_PardavimoSuma) {
+        public virtual int Delete(int Original_Id, global::System.Nullable<global::System.DateTime> Original_Data, string Original_PardavimoSaskaitosNr, string Original_DetKodas, string Original_Pavadinimas, global::System.Nullable<decimal> Original_Kiekis, string Original_Matas, string Original_KiekisSuMatu, string Original_Pardavejas, string Original_PardavimoSuma) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_PardavimoSaskaitosNr == null)) {
+            if ((Original_Data.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Data.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PardavimoSaskaitosNr));
-            }
-            if ((Original_DetKodas == null)) {
+            if ((Original_PardavimoSaskaitosNr == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_DetKodas));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PardavimoSaskaitosNr));
             }
-            if ((Original_Pavadinimas == null)) {
+            if ((Original_DetKodas == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Pavadinimas));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_DetKodas));
             }
-            if ((Original_Kiekis == null)) {
+            if ((Original_Pavadinimas == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Kiekis));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Pavadinimas));
             }
-            if ((Original_Matas == null)) {
+            if ((Original_Kiekis.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Kiekis.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Matas));
-            }
-            if ((Original_Pardavejas == null)) {
+            if ((Original_Matas == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Pardavejas));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Matas));
             }
-            if ((Original_PardavimoSuma == null)) {
+            if ((Original_KiekisSuMatu == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_PardavimoSuma));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_KiekisSuMatu));
+            }
+            if ((Original_Pardavejas == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Pardavejas));
+            }
+            if ((Original_PardavimoSuma == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_PardavimoSuma));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1241,49 +1355,61 @@ SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardaveja
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, string PardavimoSaskaitosNr, string DetKodas, string Pavadinimas, string Kiekis, string Matas, string Pardavejas, string PardavimoSuma) {
+        public virtual int Insert(int Id, global::System.Nullable<global::System.DateTime> Data, string PardavimoSaskaitosNr, string DetKodas, string Pavadinimas, global::System.Nullable<decimal> Kiekis, string Matas, string KiekisSuMatu, string Pardavejas, string PardavimoSuma) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
-            if ((PardavimoSaskaitosNr == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((Data.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Data.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PardavimoSaskaitosNr));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((DetKodas == null)) {
+            if ((PardavimoSaskaitosNr == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DetKodas));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PardavimoSaskaitosNr));
             }
-            if ((Pavadinimas == null)) {
+            if ((DetKodas == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Pavadinimas));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DetKodas));
             }
-            if ((Kiekis == null)) {
+            if ((Pavadinimas == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Kiekis));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Pavadinimas));
             }
-            if ((Matas == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Kiekis.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(Kiekis.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Matas));
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Pardavejas == null)) {
+            if ((Matas == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Pardavejas));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Matas));
             }
-            if ((PardavimoSuma == null)) {
+            if ((KiekisSuMatu == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PardavimoSuma));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(KiekisSuMatu));
+            }
+            if ((Pardavejas == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Pardavejas));
+            }
+            if ((PardavimoSuma == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(PardavimoSuma));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1307,120 +1433,152 @@ SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardaveja
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     int Id, 
+                    global::System.Nullable<global::System.DateTime> Data, 
                     string PardavimoSaskaitosNr, 
                     string DetKodas, 
                     string Pavadinimas, 
-                    string Kiekis, 
+                    global::System.Nullable<decimal> Kiekis, 
                     string Matas, 
+                    string KiekisSuMatu, 
                     string Pardavejas, 
                     string PardavimoSuma, 
                     int Original_Id, 
+                    global::System.Nullable<global::System.DateTime> Original_Data, 
                     string Original_PardavimoSaskaitosNr, 
                     string Original_DetKodas, 
                     string Original_Pavadinimas, 
-                    string Original_Kiekis, 
+                    global::System.Nullable<decimal> Original_Kiekis, 
                     string Original_Matas, 
+                    string Original_KiekisSuMatu, 
                     string Original_Pardavejas, 
                     string Original_PardavimoSuma) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
-            if ((PardavimoSaskaitosNr == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((Data.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Data.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PardavimoSaskaitosNr));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((DetKodas == null)) {
+            if ((PardavimoSaskaitosNr == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DetKodas));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PardavimoSaskaitosNr));
             }
-            if ((Pavadinimas == null)) {
+            if ((DetKodas == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Pavadinimas));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DetKodas));
             }
-            if ((Kiekis == null)) {
+            if ((Pavadinimas == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Kiekis));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Pavadinimas));
             }
-            if ((Matas == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Kiekis.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Kiekis.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Matas));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Pardavejas == null)) {
+            if ((Matas == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Pardavejas));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Matas));
             }
-            if ((PardavimoSuma == null)) {
+            if ((KiekisSuMatu == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PardavimoSuma));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(KiekisSuMatu));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
-            if ((Original_PardavimoSaskaitosNr == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((Pardavejas == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PardavimoSaskaitosNr));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Pardavejas));
             }
-            if ((Original_DetKodas == null)) {
+            if ((PardavimoSuma == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(PardavimoSuma));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id));
+            if ((Original_Data.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Data.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_DetKodas));
-            }
-            if ((Original_Pavadinimas == null)) {
+            if ((Original_PardavimoSaskaitosNr == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Pavadinimas));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_PardavimoSaskaitosNr));
             }
-            if ((Original_Kiekis == null)) {
+            if ((Original_DetKodas == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Kiekis));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_DetKodas));
             }
-            if ((Original_Matas == null)) {
+            if ((Original_Pavadinimas == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Matas));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Pavadinimas));
             }
-            if ((Original_Pardavejas == null)) {
+            if ((Original_Kiekis.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_Kiekis.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Pardavejas));
-            }
-            if ((Original_PardavimoSuma == null)) {
+            if ((Original_Matas == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_PardavimoSuma));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Matas));
+            }
+            if ((Original_KiekisSuMatu == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_KiekisSuMatu));
+            }
+            if ((Original_Pardavejas == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Pardavejas));
+            }
+            if ((Original_PardavimoSuma == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_PardavimoSuma));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1442,8 +1600,27 @@ SELECT Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardaveja
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PardavimoSaskaitosNr, string DetKodas, string Pavadinimas, string Kiekis, string Matas, string Pardavejas, string PardavimoSuma, int Original_Id, string Original_PardavimoSaskaitosNr, string Original_DetKodas, string Original_Pavadinimas, string Original_Kiekis, string Original_Matas, string Original_Pardavejas, string Original_PardavimoSuma) {
-            return this.Update(Original_Id, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, Pardavejas, PardavimoSuma, Original_Id, Original_PardavimoSaskaitosNr, Original_DetKodas, Original_Pavadinimas, Original_Kiekis, Original_Matas, Original_Pardavejas, Original_PardavimoSuma);
+        public virtual int Update(
+                    global::System.Nullable<global::System.DateTime> Data, 
+                    string PardavimoSaskaitosNr, 
+                    string DetKodas, 
+                    string Pavadinimas, 
+                    global::System.Nullable<decimal> Kiekis, 
+                    string Matas, 
+                    string KiekisSuMatu, 
+                    string Pardavejas, 
+                    string PardavimoSuma, 
+                    int Original_Id, 
+                    global::System.Nullable<global::System.DateTime> Original_Data, 
+                    string Original_PardavimoSaskaitosNr, 
+                    string Original_DetKodas, 
+                    string Original_Pavadinimas, 
+                    global::System.Nullable<decimal> Original_Kiekis, 
+                    string Original_Matas, 
+                    string Original_KiekisSuMatu, 
+                    string Original_Pardavejas, 
+                    string Original_PardavimoSuma) {
+            return this.Update(Original_Id, Data, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, KiekisSuMatu, Pardavejas, PardavimoSuma, Original_Id, Original_Data, Original_PardavimoSaskaitosNr, Original_DetKodas, Original_Pavadinimas, Original_Kiekis, Original_Matas, Original_KiekisSuMatu, Original_Pardavejas, Original_PardavimoSuma);
         }
     }
     
