@@ -43,9 +43,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.uzdaryti_forma1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.conect_to_as2008 = new System.Windows.Forms.Button();
             this.K5DuomenuBaze.SuspendLayout();
             this.KomplektoDetales.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -129,18 +132,18 @@
             // 
             this.KomplektoDetales.Controls.Add(this.skaiciuoti_K5);
             this.KomplektoDetales.Controls.Add(this.groupBox1);
-            this.KomplektoDetales.Location = new System.Drawing.Point(22, 210);
+            this.KomplektoDetales.Location = new System.Drawing.Point(22, 374);
             this.KomplektoDetales.Margin = new System.Windows.Forms.Padding(4);
             this.KomplektoDetales.Name = "KomplektoDetales";
             this.KomplektoDetales.Padding = new System.Windows.Forms.Padding(4);
-            this.KomplektoDetales.Size = new System.Drawing.Size(971, 343);
+            this.KomplektoDetales.Size = new System.Drawing.Size(971, 179);
             this.KomplektoDetales.TabIndex = 2;
             this.KomplektoDetales.TabStop = false;
             this.KomplektoDetales.Text = "Komplektų pardavimai";
             // 
             // skaiciuoti_K5
             // 
-            this.skaiciuoti_K5.Location = new System.Drawing.Point(7, 305);
+            this.skaiciuoti_K5.Location = new System.Drawing.Point(11, 136);
             this.skaiciuoti_K5.Name = "skaiciuoti_K5";
             this.skaiciuoti_K5.Size = new System.Drawing.Size(188, 31);
             this.skaiciuoti_K5.TabIndex = 1;
@@ -203,11 +206,33 @@
             this.uzdaryti_forma1.UseVisualStyleBackColor = true;
             this.uzdaryti_forma1.Click += new System.EventHandler(this.uzdaryti_forma1_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.conect_to_as2008);
+            this.groupBox2.Location = new System.Drawing.Point(22, 200);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(969, 167);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Prisijungimas prie as2008 duomenų bazės";
+            // 
+            // conect_to_as2008
+            // 
+            this.conect_to_as2008.Location = new System.Drawing.Point(580, 130);
+            this.conect_to_as2008.Margin = new System.Windows.Forms.Padding(4);
+            this.conect_to_as2008.Name = "conect_to_as2008";
+            this.conect_to_as2008.Size = new System.Drawing.Size(188, 30);
+            this.conect_to_as2008.TabIndex = 1;
+            this.conect_to_as2008.Text = "Prisijungti";
+            this.conect_to_as2008.UseVisualStyleBackColor = true;
+            this.conect_to_as2008.Click += new System.EventHandler(this.conect_to_as2008_Click);
+            // 
             // K5skaiciavimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 620);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.uzdaryti_forma1);
             this.Controls.Add(this.KomplektoDetales);
             this.Controls.Add(this.K5DuomenuBaze);
@@ -221,6 +246,7 @@
             this.KomplektoDetales.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +269,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button conect_to_as2008;
     }
 }
 
