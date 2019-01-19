@@ -82,7 +82,7 @@ namespace K5.v3
                 SqlDataReader reader = sumavimas_KNserv.ExecuteReader();
                 while (reader.Read())
                 {
-                    textBox_KN_serv_kompl_vnt.Text = String.Format("{0}, vnt.", reader[0]);
+                    //textBox_KN_serv_kompl_vnt.Text = String.Format("{0}, vnt.", reader[0]);
                     Console.WriteLine(String.Format("{0}, vnt.", reader[0])); 
                 }
 
@@ -97,7 +97,7 @@ namespace K5.v3
                 SqlDataReader reader1 = sumavimas_KNreal.ExecuteReader();
                 while (reader1.Read())
                 {
-                    textBox_KN_real_kompl_vnt.Text = String.Format("{0}, vnt.", reader1[0]);
+                   // textBox_KN_real_kompl_vnt.Text = String.Format("{0}, vnt.", reader1[0]);
                     Console.WriteLine(String.Format("{0}, vnt.", reader1[0]));
                 }
                 reader1.Close();
@@ -113,7 +113,12 @@ namespace K5.v3
 
         private void apieProgramąToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Programa skirta suskaičiuoti padaliniuose parduotų komplektų kiekius ir jų procentus.");
+        }
 
+        private void autoriusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Programos autorius: Vestūras Stanevičius.");
         }
     }
 }
