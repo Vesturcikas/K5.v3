@@ -21,7 +21,6 @@ namespace K5.v3
         {
             // TODO: This line of code loads data into the 'k5_DBDataSet.Komplektu_Detales' table. You can move, or remove it, as needed.
             this.komplektu_DetalesTableAdapter.Fill(this.k5_DBDataSet.Komplektu_Detales);
-
         }
 
         private void uzdaryti_Forma2_Click(object sender, EventArgs e)

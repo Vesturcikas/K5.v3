@@ -53,6 +53,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.komplektu_DetalesTableAdapter = new K5.v3.K5_DBDataSetTableAdapters.Komplektu_DetalesTableAdapter();
             this.uzdaryti_Forma2 = new System.Windows.Forms.Button();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.komplektuDetalesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet)).BeginInit();
@@ -171,7 +173,9 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
+            this.bindingNavigatorSeparator2,
+            this.saveToolStripButton,
+            this.toolStripSeparator});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -264,6 +268,20 @@
             this.uzdaryti_Forma2.UseVisualStyleBackColor = true;
             this.uzdaryti_Forma2.Click += new System.EventHandler(this.uzdaryti_Forma2_Click);
             // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(24, 24);
+            this.saveToolStripButton.Text = "&Save";
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -312,5 +330,7 @@
         private System.Windows.Forms.BindingSource komplektuDetalesBindingSource;
         private K5_DBDataSetTableAdapters.Komplektu_DetalesTableAdapter komplektu_DetalesTableAdapter;
         private System.Windows.Forms.Button uzdaryti_Forma2;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
     }
 }

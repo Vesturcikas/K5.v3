@@ -50,13 +50,12 @@ namespace K5.v3
                 }
             }
 
-            textBox2.Text = ofd.FileName;
+            //textBox2.Text = ofd.FileName;
         }
 
         private void perziureti_K5DuomenuBaze_Click(object sender, EventArgs e)
         {
             Form3 forma3 = new Form3();
-           
             forma3.Show();
         }
 
@@ -72,9 +71,8 @@ namespace K5.v3
             SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
 
             //string sujungti_Vid = "SELECT Komplektai.Id, ParduotosDetales.Id, PardavimoSaskaitosNr, DetKodas, Kiekis, Pardavejas FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='KN-Serv'";
-            string sumuotiKN_Serv_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='KN-Serv'";
-            string sumuotiKN_Real_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='KN-Real'";
-
+            string sumuotiKN_Serv_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='Kauno servisas'";
+            string sumuotiKN_Real_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='Kauno realizacija'";
 
             SqlCommand sumavimas_KNserv = new SqlCommand(sumuotiKN_Serv_Vid, sqlPrisijungimas);
 
@@ -84,12 +82,11 @@ namespace K5.v3
                 SqlDataReader reader = sumavimas_KNserv.ExecuteReader();
                 while (reader.Read())
                 {
-                    textBox3.Text = String.Format("{0}", reader[0]);
-                    Console.WriteLine(String.Format("{0}", reader[0])); 
+                    textBox_KN_serv_kompl_vnt.Text = String.Format("{0}, vnt.", reader[0]);
+                    Console.WriteLine(String.Format("{0}, vnt.", reader[0])); 
                 }
-          
+
                 sqlPrisijungimas.Close();
-                
             }
 
             SqlCommand sumavimas_KNreal = new SqlCommand(sumuotiKN_Real_Vid, sqlPrisijungimas);
@@ -100,22 +97,23 @@ namespace K5.v3
                 SqlDataReader reader1 = sumavimas_KNreal.ExecuteReader();
                 while (reader1.Read())
                 {
-                    textBox1.Text = String.Format("{0}", reader1[0]);
-                    Console.WriteLine(String.Format("{0}", reader1[0]));
+                    textBox_KN_real_kompl_vnt.Text = String.Format("{0}, vnt.", reader1[0]);
+                    Console.WriteLine(String.Format("{0}, vnt.", reader1[0]));
                 }
                 reader1.Close();
                 sqlPrisijungimas.Close();
-
             }
-
-           
-
         }
 
         private void conect_to_as2008_Click(object sender, EventArgs e)
         {
             Form6 forma6 = new Form6();
             forma6.Show();
+        }
+
+        private void apieProgramąToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
