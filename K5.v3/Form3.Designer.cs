@@ -40,16 +40,9 @@
             this.ieskoti_KomplektuCsvFailo = new System.Windows.Forms.Button();
             this.perrasyti_KomplektuLenteleK5DB = new System.Windows.Forms.Button();
             this.perziureti_KomplektuLentele = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.ieskoti_ParduotuDetaliuFailo = new System.Windows.Forms.Button();
-            this.papildyti_K5DBParduotuDetaliuLentele = new System.Windows.Forms.Button();
-            this.perziureti_K5DBParduotuDetaliuLentele = new System.Windows.Forms.Button();
             this.uzdaryti_forma3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -181,68 +174,6 @@
             this.perziureti_KomplektuLentele.UseVisualStyleBackColor = true;
             this.perziureti_KomplektuLentele.Click += new System.EventHandler(this.perziureti_KomplektuLentele_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.ieskoti_ParduotuDetaliuFailo);
-            this.groupBox3.Controls.Add(this.papildyti_K5DBParduotuDetaliuLentele);
-            this.groupBox3.Controls.Add(this.perziureti_K5DBParduotuDetaliuLentele);
-            this.groupBox3.Location = new System.Drawing.Point(24, 338);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(762, 127);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "K5. Parduotų detalių lentelė";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Parduotų detalių sąrašo .csv failas:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(18, 41);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(546, 37);
-            this.textBox2.TabIndex = 7;
-            // 
-            // ieskoti_ParduotuDetaliuFailo
-            // 
-            this.ieskoti_ParduotuDetaliuFailo.Location = new System.Drawing.Point(570, 41);
-            this.ieskoti_ParduotuDetaliuFailo.Name = "ieskoti_ParduotuDetaliuFailo";
-            this.ieskoti_ParduotuDetaliuFailo.Size = new System.Drawing.Size(186, 37);
-            this.ieskoti_ParduotuDetaliuFailo.TabIndex = 6;
-            this.ieskoti_ParduotuDetaliuFailo.Text = "Ieškoti";
-            this.ieskoti_ParduotuDetaliuFailo.UseVisualStyleBackColor = true;
-            this.ieskoti_ParduotuDetaliuFailo.Click += new System.EventHandler(this.ieskoti_ParduotuDetaliuFailo_Click);
-            // 
-            // papildyti_K5DBParduotuDetaliuLentele
-            // 
-            this.papildyti_K5DBParduotuDetaliuLentele.Location = new System.Drawing.Point(570, 84);
-            this.papildyti_K5DBParduotuDetaliuLentele.Name = "papildyti_K5DBParduotuDetaliuLentele";
-            this.papildyti_K5DBParduotuDetaliuLentele.Size = new System.Drawing.Size(186, 37);
-            this.papildyti_K5DBParduotuDetaliuLentele.TabIndex = 3;
-            this.papildyti_K5DBParduotuDetaliuLentele.Text = "Papildyti lentelę";
-            this.papildyti_K5DBParduotuDetaliuLentele.UseVisualStyleBackColor = true;
-            this.papildyti_K5DBParduotuDetaliuLentele.Click += new System.EventHandler(this.papildyti_K5DBParduotuDetaliuLentele_Click);
-            // 
-            // perziureti_K5DBParduotuDetaliuLentele
-            // 
-            this.perziureti_K5DBParduotuDetaliuLentele.Location = new System.Drawing.Point(377, 84);
-            this.perziureti_K5DBParduotuDetaliuLentele.Name = "perziureti_K5DBParduotuDetaliuLentele";
-            this.perziureti_K5DBParduotuDetaliuLentele.Size = new System.Drawing.Size(186, 37);
-            this.perziureti_K5DBParduotuDetaliuLentele.TabIndex = 3;
-            this.perziureti_K5DBParduotuDetaliuLentele.Text = "Peržiūrėti";
-            this.perziureti_K5DBParduotuDetaliuLentele.UseVisualStyleBackColor = true;
-            this.perziureti_K5DBParduotuDetaliuLentele.Click += new System.EventHandler(this.perziureti_K5DBParduotuDetaliuLentele_Click);
-            // 
             // uzdaryti_forma3
             // 
             this.uzdaryti_forma3.Location = new System.Drawing.Point(595, 480);
@@ -259,7 +190,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 522);
             this.Controls.Add(this.uzdaryti_forma3);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form3";
@@ -268,8 +198,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,19 +207,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button perziureti_KomplektuDetaliuLentele;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button uzdaryti_forma3;
         private System.Windows.Forms.Button perziureti_KomplektuLentele;
         private System.Windows.Forms.Button perrasyti_KomplektuDetaliuLentele;
         private System.Windows.Forms.Button perrasyti_KomplektuLenteleK5DB;
-        private System.Windows.Forms.Button papildyti_K5DBParduotuDetaliuLentele;
-        private System.Windows.Forms.Button perziureti_K5DBParduotuDetaliuLentele;
         private System.Windows.Forms.Button ieskoti_KomplektuCsvFailo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button ieskoti_ParduotuDetaliuFailo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button Ieskoti_KomplektoDetaliu;

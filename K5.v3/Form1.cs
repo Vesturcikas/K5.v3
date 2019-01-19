@@ -120,6 +120,12 @@ namespace K5.v3
         {
             MessageBox.Show("Programos autorius: Vestūras Stanevičius.");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form7 forma7 = new Form7();
+            forma7.Show();
+        }
     }
 }
 
