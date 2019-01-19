@@ -18,9 +18,6 @@ namespace K5.v3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new K5skaiciavimas());
-
-
-
         }
     }
 }

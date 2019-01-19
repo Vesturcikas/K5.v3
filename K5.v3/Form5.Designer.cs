@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.parduotosDetalesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.k5_DBDataSet2 = new K5.v3.K5_DBDataSet2();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,28 +51,24 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.uzdaryti_ParduotuDetLentele = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.k5_DBDataSet2 = new K5.v3.K5_DBDataSet2();
             this.parduotosDetalesTableAdapter = new K5.v3.K5_DBDataSet2TableAdapters.ParduotosDetalesTableAdapter();
-            this.parduotosDetalesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parduotosDetalesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parduotosDetalesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -98,6 +98,33 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parduotų detalių įršas:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(279, 44);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 20);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Data";
+            // 
+            // textBox9
+            // 
+            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parduotosDetalesBindingSource1, "Data", true));
+            this.textBox9.Location = new System.Drawing.Point(330, 41);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(157, 27);
+            this.textBox9.TabIndex = 15;
+            // 
+            // parduotosDetalesBindingSource1
+            // 
+            this.parduotosDetalesBindingSource1.DataMember = "ParduotosDetales";
+            this.parduotosDetalesBindingSource1.DataSource = this.k5_DBDataSet2;
+            // 
+            // k5_DBDataSet2
+            // 
+            this.k5_DBDataSet2.DataSetName = "K5_DBDataSet2";
+            this.k5_DBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label7
             // 
@@ -243,23 +270,6 @@
             this.uzdaryti_ParduotuDetLentele.UseVisualStyleBackColor = true;
             this.uzdaryti_ParduotuDetLentele.Click += new System.EventHandler(this.uzdaryti_ParduotuDetLentele_Click);
             // 
-            // textBox9
-            // 
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parduotosDetalesBindingSource1, "Data", true));
-            this.textBox9.Location = new System.Drawing.Point(330, 41);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(157, 27);
-            this.textBox9.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(279, 44);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 20);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Data";
-            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -289,6 +299,31 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1000, 27);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -322,16 +357,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -354,40 +382,12 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // k5_DBDataSet2
-            // 
-            this.k5_DBDataSet2.DataSetName = "K5_DBDataSet2";
-            this.k5_DBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // parduotosDetalesTableAdapter
             // 
             this.parduotosDetalesTableAdapter.ClearBeforeFill = true;
-            // 
-            // parduotosDetalesBindingSource1
-            // 
-            this.parduotosDetalesBindingSource1.DataMember = "ParduotosDetales";
-            this.parduotosDetalesBindingSource1.DataSource = this.k5_DBDataSet2;
             // 
             // Form5
             // 
@@ -404,11 +404,11 @@
             this.Load += new System.EventHandler(this.Form5_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parduotosDetalesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.k5_DBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parduotosDetalesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
