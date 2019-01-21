@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 
 namespace K5.v3
 {
@@ -19,23 +19,6 @@ namespace K5.v3
         {
             InitializeComponent();
         }
-
-        /*
-        private void Prisijungti_Click(object sender, EventArgs e)
-        {
-            string prisijungimoEilute = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\vesta\source\repos\K5.v3\K5.v3\Database1.mdf; Integrated Security = True";
-            SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
-
-            MessageBox.Show("Prisijungta prie K5 skaičivimo duomenu bazės.");
-
-            
-            sqlPrisijungimas.Open();
-            MessageBox.Show("Prisijungimas atidarytas.");
-
-            sqlPrisijungimas.Close();
-            MessageBox.Show("Prisijungimas uždarytas.");
-            
-        }*/
 
         private void ieskoti_K5DuomenuBazes_Click(object sender, EventArgs e)
         {
@@ -66,43 +49,8 @@ namespace K5.v3
 
         private void skaiciuoti_K5_Click(object sender, EventArgs e)
         {
-            string prisijungimoEilute = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\vesta\source\repos\K5.v3\K5.v3\K5_DB.mdf; Integrated Security = True";
-
-            SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
-
-            //string sujungti_Vid = "SELECT Komplektai.Id, ParduotosDetales.Id, PardavimoSaskaitosNr, DetKodas, Kiekis, Pardavejas FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='KN-Serv'";
-            string sumuotiKN_Serv_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='Kauno servisas'";
-            string sumuotiKN_Real_Vid = "SELECT SUM(Kiekis) FROM ParduotosDetales INNER JOIN Komplektai ON ParduotosDetales.DetKodas=Komplektai.KomplektoKodas WHERE Pardavejas='Kauno realizacija'";
-
-            SqlCommand sumavimas_KNserv = new SqlCommand(sumuotiKN_Serv_Vid, sqlPrisijungimas);
-
-            using (sumavimas_KNserv)
-            {
-                sqlPrisijungimas.Open();
-                SqlDataReader reader = sumavimas_KNserv.ExecuteReader();
-                while (reader.Read())
-                {
-                    //textBox_KN_serv_kompl_vnt.Text = String.Format("{0}, vnt.", reader[0]);
-                    Console.WriteLine(String.Format("{0}, vnt.", reader[0])); 
-                }
-
-                sqlPrisijungimas.Close();
-            }
-
-            SqlCommand sumavimas_KNreal = new SqlCommand(sumuotiKN_Real_Vid, sqlPrisijungimas);
-            using (sumavimas_KNreal)
-            {
-                sqlPrisijungimas.Open();
-
-                SqlDataReader reader1 = sumavimas_KNreal.ExecuteReader();
-                while (reader1.Read())
-                {
-                   // textBox_KN_real_kompl_vnt.Text = String.Format("{0}, vnt.", reader1[0]);
-                    Console.WriteLine(String.Format("{0}, vnt.", reader1[0]));
-                }
-                reader1.Close();
-                sqlPrisijungimas.Close();
-            }
+            Form8 forma8 = new Form8();
+            forma8.Show();
         }
 
         private void conect_to_as2008_Click(object sender, EventArgs e)
