@@ -44,28 +44,17 @@ namespace K5.v3
         private void papildyti_K5DBParduotuDetaliuLentele_Click(object sender, EventArgs e)
         {
             string prisijungimoEilute = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vesta\source\repos\K5.V3\K5.v3\K5_DB.mdf;Integrated Security=True";
-
-            System.IO.StreamReader reader = new System.IO.StreamReader(textBox2.Text);
-
-            //string trynimas = "DELETE FROM ParduotosDetales";
-
+                        
             string irasymas = "INSERT INTO ParduotosDetales(Id, Data, PardavimoSaskaitosNr, DetKodas, Pavadinimas, Kiekis, Matas, KiekisSuMatu, Pardavejas, PardavimoSuma)" +
                 "VALUES(@Id, @Data, @PardavimoSaskaitosNr, @DetKodas, @Pavadinimas, @Kiekis, @Matas, @KiekisSuMatu, @Pardavejas, @PardavimoSuma)";
+
+            
+
+            System.IO.StreamReader reader = new System.IO.StreamReader(textBox2.Text);
 
             string line = null;
 
             SqlConnection sqlPrisijungimas = new SqlConnection(prisijungimoEilute);
-
-            /*
-            SqlCommand komanadaTrinti = new SqlCommand(trynimas, sqlPrisijungimas);
-
-            using (komanadaTrinti)
-            {
-                sqlPrisijungimas.Open();
-                komanadaTrinti.ExecuteNonQuery();
-                sqlPrisijungimas.Close();
-            }
-            */
 
             while ((line = reader.ReadLine()) != null)
             {
